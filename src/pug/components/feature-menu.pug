@@ -1,0 +1,19 @@
+mixin feature-menu
+  .feature-menu
+    //- Дарк мод
+    button.feature-menu__item.feature-menu__item--mode(type="button", aria-label="Переключатель темы сайта")
+      +icon("icon-sun")(class="feature-menu__icon", width="25", height="25")
+  
+    //- Github профиль
+    a.feature-menu__item.feature-menu__item--github(href="#", aria-label="Github профиль")
+      +icon("icon-github")(class="feature-menu__icon", width="25", height="25")
+  
+    //- Поиск по сайту
+    button.feature-menu__item.feature-menu__item--search(type="button", aria-label="Поиск по сайту")
+      +icon("icon-search")(class="feature-menu__icon", width="25", height="25")
+  
+    //- Переключатель языка сайта
+    button.feature-menu__item.feature-menu__item--lang(type="button", aria-label="Переключатель языка сайта", translate="no") EN
+  
+    //- Кнопка закрытия навигации
+    button.feature-menu__item.feature-menu__item--toggle(type="button", aria-label="Переключатель меню")

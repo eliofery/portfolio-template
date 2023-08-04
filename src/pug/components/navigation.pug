@@ -1,0 +1,30 @@
+//- Выводит навигацию
+mixin navigation
+  if jsonData.mainNav.items
+    nav.navigation
+      .navigation__wrap
+        button.navigation__toggle(type="button", aria-label="Переключатель меню")
+        
+        .navigation__header
+          .navigation__logo
+            +logo
+          .navigation__feature
+            +feature-menu
+        
+        .navigation__content
+          ul.navigation__list
+            +navigationItem(jsonData.mainNav.items)
+
+//- Рекурсивный вывод пунктов меню в навигации
+mixin navigationItem(items)
+  each item, index in items
+    - var classActive = item.active ? "navigation__item--active" : "";
+    
+    li(class="navigation__item " + classActive)
+      a.navigation__link(href=item.link) #{item.title}
+      if item.links
+        button.navigation__sub-toggle(type="button", aria-label="Переключатель вложенного меню")
+        ul.navigation__sub-list
+          li.navigation__item.navigation__item--back
+            button.navigation__link(type="button") ← Назад
+          +navigationItem(item.links)

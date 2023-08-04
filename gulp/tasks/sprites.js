@@ -43,7 +43,7 @@ const spriteMono = () =>
             { removeComments: true }, // удалить комментарии
             {
               removeAttrs: {
-                attrs: ['class', 'data-name'], // удалить указанные атрибуты, 'fill', 'stroke.*'
+                attrs: ['class', 'data-name', 'fill', 'stroke.*'], // удалить указанные атрибуты, 'fill', 'stroke.*'
               },
             },
           ],

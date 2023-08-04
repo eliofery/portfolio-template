@@ -13,7 +13,7 @@
     {
       "title": "Блог",
       "link": "#",
-      "active": true,
+      "active": false,
       "links": [
         {
           "title": "Дизайн",

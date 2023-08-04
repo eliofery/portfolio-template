@@ -2,22 +2,34 @@
 mixin navigation
   if jsonData.mainNav.items
     nav.navigation
+      button.navigation__toggle.menu-toggle(type="button", aria-label="Переключатель меню")
+      
       .navigation__wrap
-        button.navigation__toggle(type="button", aria-label="Переключатель меню")
-        
         .navigation__header
           .navigation__logo
             +logo
           .navigation__feature
             +feature-menu
+          button.menu-toggle.menu-toggle--close(type="button", aria-label="Переключатель меню")
         
         .navigation__content
           ul.navigation__list
-            +navigationItem(jsonData.mainNav.items)
+            +navigationItem(jsonData.mainNav.items)            
+          .navigation__search
+            p.navigation__search-wrapp
+              input.navigation__search-input(type="text", placeholder="Поиск")
+              +icon("icon-search")(class="navigation__search-icon", width="20", height="20")      
+            if jsonData.searchItems.items
+              .navigation__search-result
+                each item in jsonData.searchItems.items
+                  a.navigation__search-link(href=item.link) #{item.title}
+            else
+              .navigation__search-result
+                span.navigation__search-link Ни чего не найдено
 
 //- Рекурсивный вывод пунктов меню в навигации
 mixin navigationItem(items)
-  each item, index in items
+  each item in items
     - var classActive = item.active ? "navigation__item--active" : "";
     
     li(class="navigation__item " + classActive)

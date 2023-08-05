@@ -87,12 +87,15 @@
     box-shadow: 1px 0 20px rgb(var(--color-shadow));
 
     transform: translateX(-110%);
+    visibility: hidden;
 
     transition: transform 0.3s ease;
   }
 
   .navigation__wrap--active {
+
     transform: translateX(0);
+    visibility: visible;
   }
 
   .navigation__header {
@@ -259,6 +262,10 @@
 
   .no-js .navigation__sub-list {
     min-height: 500px;
+  }
+
+  .no-js .navigation__toggle + .navigation__wrap {
+    visibility: visible;
   }
 
   .no-js .navigation__toggle:focus + .navigation__wrap,

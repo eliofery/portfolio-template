@@ -9,10 +9,7 @@ const buildPath = 'build' // готовый продакшен проект
 
 const config = {
   // Файлы в которых производится замена текста
-  files: [
-    `${srcPath}/assets/manifest.json`,
-    `${srcPath}/pug/data/config.pug`,
-  ],
+  files: [`${srcPath}/assets/manifest.json`, `${srcPath}/pug/data/config.pug`],
 
   // Замена текста в файлах указанных выше, укажите в параметре new свое значение
   replacement: {
@@ -72,6 +69,7 @@ const config = {
 
     // Препроцессор Scss
     scss: `${srcPath}/scss`, // scss стили
+    components: `${srcPath}/scss/scaffolds/components`, // компоненты
 
     // Скрипты
     js: {

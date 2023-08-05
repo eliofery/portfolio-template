@@ -53,6 +53,15 @@ const config = {
     },
   },
 
+  // Эти стили не будут добавлены в main.scss
+  ignoreScssPaths: [
+    'scaffolds/components/_navigation.scss',
+    'scaffolds/components/logo',
+    'scaffolds/components/feature-menu',
+    'scaffolds/components/menu-toggle',
+    'scaffolds/sections/main-header',
+  ],
+
   proxy: 'http://localhost', // url виртуального хоста
   port: 3000, // порт виртуального хоста
 

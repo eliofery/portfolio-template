@@ -44,9 +44,8 @@ export const stylesBuild = () => {
     )
     .pipe(
       sassGlob({
-        // Эти стили добавлены в _critical.scss
-        // и не нужны в main.scss файла
-        ignorePaths: ['scaffolds/components/_navigation.scss'],
+        // Эти стили добавлены в _critical.scss и не нужны в main.scss
+        ignorePaths: config.ignoreScssPaths,
       }),
     ) // проходит по всем файлам в scss, подключенным через шаблон /**/*
     .pipe(

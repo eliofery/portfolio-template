@@ -8,11 +8,20 @@
       fill: #222222;
     }
 
+    .dark-mode .first {
+      fill: rgb(240, 51, 59);
+    }
+
+    .dark-mode .second {
+      fill: #ccc;
+    }
+
     @media (prefers-color-scheme: dark) {
-      .first {
+      .second {
+        fill: #fff;
       }
 
-      .second {
+      .dark-mode .second {
         fill: #fff;
       }
     }

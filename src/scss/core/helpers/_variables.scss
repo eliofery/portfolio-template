@@ -1,9 +1,7 @@
 // @link https://rolle.design/native-css-variables-vs-scss-variables
 $black: #222;
 $white: #fff;
-$white-2: #f9f9f9;
 $accent: #ee1b24;
-$grey: #dcdcdc;
 
 :root {
   --color-text: #{hextorgb($black)};
@@ -11,24 +9,22 @@ $grey: #dcdcdc;
   --color-accent: #{hextorgb($accent)};
   --color-shadow: #{hextorgb(lighten($black, 50%))};
   --color-submenu: #{hextorgb(darken($white, 5%))};
-  --color-submenu-hover: #{hextorgb($grey)};
-  --color-overlay: #{hextorgb($white-2)};
+  --color-submenu-hover: #{hextorgb(#dcdcdc)};
+  --color-overlay: #{hextorgb(#f9f9f9)};
 }
 
 @mixin dark-mode {
   --color-text: #{hextorgb($white)};
   --color-bg: #{hextorgb($black)};
-  --color-accent: #{hextorgb($accent)};
+  --color-accent: #{hextorgb(lighten($accent, 5%))};
+  --color-shadow: #{hextorgb(darken($black, 5%))};
+  --color-submenu: #{hextorgb(darken($black, 3%))};
+  --color-submenu-hover: #{hextorgb(#151515)};
+  --color-overlay: #{hextorgb(#333)};
 }
 
 .dark-mode {
   @include dark-mode;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include dark-mode;
-  }
 }
 
 $font-primary: Roboto, -apple-system, Arial, sans-serif;

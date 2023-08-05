@@ -10,6 +10,13 @@ title #{ siteTitle }
 meta(name="description", content=siteDescription)
 
 script.
+  if (
+    window.matchMedia('(prefers-color-scheme: dark)').matches ||
+    localStorage.getItem('color-scheme') === 'dark'
+  ) {
+    document.documentElement.classList.add('dark-mode')
+  }
+  
   document.documentElement.classList.remove('no-js')
 
 base(href=baseUrl)

@@ -38,7 +38,7 @@
 
   .feature-menu__item:hover .feature-menu__icon,
   .feature-menu__item:focus .feature-menu__icon {
-    fill: red;
+    fill: rgb(var(--color-accent));
   }
 
   .feature-menu__item--lang {
@@ -52,7 +52,7 @@
       width: calc(100% - 12px);
       height: 2px;
 
-      background-color: black;
+      background-color: rgb(var(--color-text));
       opacity: 0;
 
       transition: $transition;

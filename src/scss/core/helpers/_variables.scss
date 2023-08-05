@@ -1,7 +1,9 @@
 // @link https://rolle.design/native-css-variables-vs-scss-variables
 $black: #222;
 $white: #fff;
+$white-2: #f9f9f9;
 $accent: #ee1b24;
+$grey: #dcdcdc;
 
 :root {
   --color-text: #{hextorgb($black)};
@@ -9,7 +11,8 @@ $accent: #ee1b24;
   --color-accent: #{hextorgb($accent)};
   --color-shadow: #{hextorgb(lighten($black, 50%))};
   --color-submenu: #{hextorgb(darken($white, 5%))};
-  --color-submenu-hover: #{hextorgb(#dcdcdc)};
+  --color-submenu-hover: #{hextorgb($grey)};
+  --color-overlay: #{hextorgb($white-2)};
 }
 
 @mixin dark-mode {

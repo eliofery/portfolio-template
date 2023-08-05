@@ -2,15 +2,15 @@
 mixin navigation
   if jsonData.mainNav.items
     nav.navigation
-      button.navigation__toggle.menu-toggle(type="button", aria-label="Переключатель меню")
+      button.navigation__toggle.menu-toggle(type="button", data-el="nav-toggle-open", aria-label="Переключатель меню", aria-controls="navigation")
       
-      .navigation__wrap
+      #navigation.navigation__wrap(data-el="nav-wrap")
         .navigation__header
           .navigation__logo
             +logo
           .navigation__feature
             +feature-menu
-          button.menu-toggle.menu-toggle--close(type="button", aria-label="Переключатель меню")
+          button.menu-toggle.menu-toggle--close(type="button", data-el="nav-toggle-close", aria-label="Переключатель меню")
         
         .navigation__content
           ul.navigation__list
@@ -26,6 +26,8 @@ mixin navigation
             else
               .navigation__search-result
                 span.navigation__search-link Ни чего не найдено
+      
+      .navigation__overlay.overlay(hidden="true", data-el="nav-overlay")
 
 //- Рекурсивный вывод пунктов меню в навигации
 mixin navigationItem(items)
@@ -35,8 +37,8 @@ mixin navigationItem(items)
     li(class="navigation__item " + classActive)
       a.navigation__link(href=item.link) #{item.title}
       if item.links
-        button.navigation__sub-toggle(type="button", aria-label="Переключатель вложенного меню")
+        button.navigation__sub-toggle(type="button", data-el="nav-toggle-sub", aria-label="Переключатель вложенного меню")
         ul.navigation__sub-list
           li.navigation__item.navigation__item--back
-            button.navigation__link(type="button") ← Назад
+            button.navigation__link(type="button", data-el="nav-toggle-back") ← Назад
           +navigationItem(item.links)

@@ -43,6 +43,9 @@ html.no-js(lang="ru")
     block footer
       include ../parts/footer.pug
 
+    block modal
+      +search-modal()
+        
     block scripts
       script(src="./js/main.js?v=" + siteVersion, type="module")
         

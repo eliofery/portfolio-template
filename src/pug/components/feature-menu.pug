@@ -5,11 +5,11 @@ mixin feature-menu
       +icon("icon-sun")(class="feature-menu__icon", width="25", height="25", data-el="dark-mode-icon")
   
     //- Github профиль
-    a.feature-menu__item.feature-menu__item--github(href="https://github.com/eliofery", target="__blank", aria-label="Github профиль")
+    a.feature-menu__item.feature-menu__item--github(href="https://github.com/eliofery", target="_blank", aria-label="Github профиль")
       +icon("icon-github")(class="feature-menu__icon", width="25", height="25")
   
     //- Поиск по сайту
-    button.feature-menu__item.feature-menu__item--search(type="button", aria-label="Поиск по сайту")
+    button.feature-menu__item.feature-menu__item--search(type="button", data-el="search-open", aria-label="Поиск по сайту")
       +icon("icon-search")(class="feature-menu__icon", width="25", height="25")
   
     //- Переключатель языка сайта

@@ -57,7 +57,7 @@ const navigation = () => {
     openToggle.classList.remove('menu-toggle--close')
     nav.classList.remove('navigation__wrap--active')
 
-    overlay.setAttribute('hidden', 'true')
+    overlay.hidden = true
     nav.removeAttribute('aria-modal')
     nav.removeAttribute('role')
 

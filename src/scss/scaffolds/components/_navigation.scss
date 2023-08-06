@@ -175,47 +175,30 @@
   }
 
   .navigation__search {
-    display: block;
+    @include button-reset;
 
-    font-size: map-get($font-sizes, "xs");
-  }
-
-  .navigation__search-wrapp {
     position: relative;
 
-    margin: 20px 20px 10px;
-  }
+    display: block;
+    width: calc(100% - 40px);
+    margin: 10px 20px;
+    padding: 20px 20px 20px 40px;
 
-  .navigation__search-input {
-    width: 100%;
-    padding: 10px 30px 10px 0;
+    color: rgba(var(--color-text), 0.5);
+    font-size: map-get($font-sizes, "xs");
+    text-align: left;
 
-    color: rgb(var(--color-text));
-
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(var(--color-text), 0.2);
-
-    &::placeholder {
-      color: rgba(var(--color-text), 0.5);
-    }
-
-    &:focus {
-      border-bottom: 1px solid rgb(var(--color-accent));
-      outline: none;
-    }
+    border-bottom: 1px solid rgb(var(--color-text), 0.3);
   }
 
   .navigation__search-icon {
     position: absolute;
-    top: 8px;
-    right: 0;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
 
     fill: rgba(var(--color-text), 0.5);
-  }
-
-  .navigation__search-input:focus + .navigation__search-icon {
-    fill: rgb(var(--color-text));
   }
 
   .navigation__search-link {

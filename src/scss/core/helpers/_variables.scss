@@ -10,7 +10,7 @@ $accent: #ee1b24;
   --color-shadow: #{hextorgb(lighten($black, 50%))};
   --color-submenu: #{hextorgb(darken($white, 5%))};
   --color-submenu-hover: #{hextorgb(#dcdcdc)};
-  --color-overlay: #{hextorgb(#f9f9f9)};
+  --color-overlay: #{hextorgb(#c7c7c7)};
 }
 
 @mixin dark-mode {

@@ -6,8 +6,38 @@ import { debounce, getElementsByData } from '@/utils'
 import searchItems from '@/../pug/data/searchItems.json'
 
 const search = () => {
-  const { 'search-input': searchInputs, 'search-result': searchResults } = getElementsByData('el')
+  const {
+    search: searchModal,
+    'search-input': searchInput,
+    'search-result': searchResult,
+    'search-open': searchOpenToggles,
+    'search-close': searchCloseToggle,
+  } = getElementsByData('el')
   const articles = searchItems.items
+
+  // Закрыть поиск по нажатию ESC
+  const onEscape = evt => {
+    if (evt.key === 'Escape') {
+      searchCloseToggle.click()
+    }
+  }
+
+  // Открыть поиск
+  const onOpen = () => {
+    searchModal.removeAttribute('hidden')
+    searchInput.focus()
+
+    window.addEventListener('keyup', onEscape)
+  }
+
+  // Закрыть поиск
+  const onClose = evt => {
+    if (evt.target.dataset.el === 'search' || evt.target.dataset.el === 'search-close') {
+      searchModal.hidden = true
+
+      window.removeEventListener('keyup', onEscape)
+    }
+  }
 
   // Проверка вхождения некоторых символов
   const checkName = (name, str) => {
@@ -22,24 +52,29 @@ const search = () => {
 
   // Отобразить успешный результат поиска
   const displayResult = result => {
-    const link = document.createElement('a')
+    const markup = `<a class="modal-search__item" href="${result.link}" title="${result.title}">
+        <div class="modal-search__item-wrap">${result.title}</div>
+    </a>`
 
-    link.classList.add('navigation__search-link')
-    link.href = result.link
-    link.title = result.title
-    link.innerHTML = result.title
-
-    searchResults.appendChild(link)
+    searchResult.insertAdjacentHTML('afterbegin', markup)
   }
 
   // Отобразить не успешный результат поиска
   const displayResultNotFound = () => {
-    const span = document.createElement('span')
+    const markup = `<div class="modal-search__item modal-search__item--not-found">
+        <div class="modal-search__item-wrap">Ни чего не найдено</div>
+    </div>`
 
-    span.classList.add('navigation__search-link')
-    span.innerHTML = 'Ни чего не найдено'
+    searchResult.insertAdjacentHTML('afterbegin', markup)
+  }
 
-    searchResults.appendChild(span)
+  // Отобразить текст по умолчанию
+  const displayResultDefault = () => {
+    const markup = `<div class="modal-search__item modal-search__item--not-found">
+        <div class="modal-search__item-wrap">Введите ваш запрос</div>
+    </div>`
+
+    searchResult.insertAdjacentHTML('afterbegin', markup)
   }
 
   // Обработчик поиска
@@ -55,19 +90,26 @@ const search = () => {
       return title.includes(str) || desc.includes(str) || checkName(letterTitle, str) || checkName(letterDesc, str)
     })
 
-    searchResults.innerHTML = ''
+    searchResult.innerHTML = ''
 
     if (result.length > 0 && str) {
       result.forEach(res => displayResult(res))
     } else if (str) {
       displayResultNotFound()
     } else {
-      searchResults.innerHTML = ''
+      displayResultDefault()
     }
   }
 
   // Ввод искомого слова
-  searchInputs.addEventListener('input', debounce(onSearch))
+  searchInput.addEventListener('input', debounce(onSearch))
+
+  searchOpenToggles.forEach(toggle => {
+    toggle.addEventListener('click', onOpen)
+  })
+
+  searchModal.addEventListener('click', onClose)
+  searchCloseToggle.addEventListener('click', onClose)
 }
 
 export default search

@@ -27,6 +27,8 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'no-underscore-dangle': 'off',
     'no-use-before-define': 'off',
+    'no-useless-return': 'off',
+    'no-param-reassign': 'off',
   },
   settings: {
     'import/resolver': {

@@ -27,6 +27,12 @@
   fill: rgb(var(--color-text));
 }
 
+.no-js .feature-menu__item--mode,
+.no-js .feature-menu__item--search,
+.no-js .feature-menu__item--lang {
+  display: none;
+}
+
 @include from(sm) {
   .feature-menu {
     column-gap: 30px;

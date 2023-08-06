@@ -17,15 +17,9 @@ mixin navigation
             +navigationItem(jsonData.mainNav.items)            
           .navigation__search
             p.navigation__search-wrapp
-              input.navigation__search-input(type="text", placeholder="Поиск")
+              input.navigation__search-input(type="text", data-el="search-input", placeholder="Поиск")
               +icon("icon-search")(class="navigation__search-icon", width="20", height="20")      
-            if jsonData.searchItems.items
-              .navigation__search-result
-                each item in jsonData.searchItems.items
-                  a.navigation__search-link(href=item.link) #{item.title}
-            else
-              .navigation__search-result
-                span.navigation__search-link Ни чего не найдено
+              .navigation__search-result(data-el="search-result")
       
       .navigation__overlay.overlay(hidden="true", data-el="nav-overlay")
 

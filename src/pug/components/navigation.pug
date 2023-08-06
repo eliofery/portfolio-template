@@ -12,7 +12,7 @@ mixin navigation
             +feature-menu
           button.menu-toggle.menu-toggle--close(type="button", data-el="nav-toggle-close", aria-label="Переключатель меню")
         
-        .navigation__content
+        .navigation__content(data-el="nav-content")
           ul.navigation__list
             +navigationItem(jsonData.mainNav.items)            
           .navigation__search

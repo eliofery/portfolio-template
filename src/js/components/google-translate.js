@@ -103,9 +103,7 @@ function eventHandler(event, selector, handler) {
     if (el) handler(el)
   }
 
-  const debounceClick = debounce(onClick)
-
-  document.addEventListener(event, debounceClick)
+  document.addEventListener(event, debounce(onClick))
 }
 
 // Получаем язык на который переводим и производим необходимые манипуляции с DOM

@@ -104,6 +104,26 @@
                   "title": "Frontend 1.8",
                   "link": "#",
                   "active": false
+                },
+                {
+                  "title": "Frontend 1.9",
+                  "link": "#",
+                  "active": false
+                },
+                {
+                  "title": "Frontend 1.10",
+                  "link": "#",
+                  "active": false
+                },
+                {
+                  "title": "Frontend 1.11",
+                  "link": "#",
+                  "active": false
+                },
+                {
+                  "title": "Frontend 1.12",
+                  "link": "#",
+                  "active": false
                 }
               ]
             },

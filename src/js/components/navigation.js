@@ -6,6 +6,7 @@ import { getElementsByData } from '@/utils'
 const navigation = () => {
   const {
     'nav-wrap': nav,
+    'nav-content': navContent,
     'nav-toggle-open': openToggle,
     'nav-toggle-close': closeToggle,
     'nav-toggle-sub': subToggles,
@@ -25,9 +26,7 @@ const navigation = () => {
       const currentBackToggle = backToggles
         .filter(toggle => {
           const currentSubMenu = toggle.parentElement.parentElement
-          const activeSubMenus = document.querySelectorAll(
-            '.navigation__sub-list--open',
-          )
+          const activeSubMenus = document.querySelectorAll('.navigation__sub-list--open')
 
           return currentSubMenu === Array.from(activeSubMenus).at(-1)
         })
@@ -67,14 +66,18 @@ const navigation = () => {
 
   // Открыть подменю
   const onOpenMenu = evt => {
-    evt.target.nextElementSibling.classList.add('navigation__sub-list--open')
+    const subList = evt.target.nextElementSibling
+
+    subList.classList.add('navigation__sub-list--open')
+    subList.style.height = `${Math.max(navContent.scrollHeight, subList.clientHeight)}px`
   }
 
   // Закрыть подменю
   const onCloseMenu = evt => {
-    evt.target
-      .closest('.navigation__sub-list')
-      .classList.remove('navigation__sub-list--open')
+    const subList = evt.target.closest('.navigation__sub-list')
+
+    subList.classList.remove('navigation__sub-list--open')
+    subList.style.height = 'auto'
   }
 
   // Изменение ширины экрана

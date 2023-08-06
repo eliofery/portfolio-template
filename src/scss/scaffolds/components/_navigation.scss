@@ -156,8 +156,9 @@
     left: 0;
     z-index: 10;
 
+    height: 0;
     padding: 10px 0;
-    overflow-y: auto;
+    overflow: hidden;
 
     background-color: rgb(var(--color-bg));
 
@@ -167,6 +168,9 @@
   }
 
   .navigation__sub-list--open {
+    height: 100%;
+    overflow: unset;
+
     transform: translateX(0);
   }
 
@@ -219,10 +223,13 @@
 
     display: block;
     padding: 15px 20px;
+    overflow: hidden;
 
     color: rgba(var(--color-text), 0.8);
     line-height: 1.2;
+    white-space: nowrap;
     text-decoration: none;
+    text-overflow: ellipsis;
 
     &::before {
       position: absolute;
@@ -250,18 +257,14 @@
     margin-left: auto;
   }
 
-  .no-js .navigation__feature .feature-menu__item--mode,
-  .no-js .navigation__feature .feature-menu__item--search,
-  .no-js .navigation__feature .feature-menu__item--lang {
-    display: none;
-  }
-
   .no-js .navigation:focus-within .menu-toggle {
     pointer-events: none;
   }
 
   .no-js .navigation__sub-list {
+    height: 100%;
     min-height: 500px;
+    overflow-y: auto;
   }
 
   .no-js .navigation__toggle + .navigation__wrap {

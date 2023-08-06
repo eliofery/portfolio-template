@@ -11,4 +11,14 @@ export const getElementsByData = name => {
   return el
 }
 
-export const other = () => true
+// Ограничивает частоту выполнения определенной функции
+export const debounce = (func, timeout = 300) => {
+  let timer
+
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, timeout)
+  }
+}

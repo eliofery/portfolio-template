@@ -9,22 +9,10 @@ module.exports = {
   parser: '@babel/eslint-parser',
   rules: {
     indent: ['off', 2],
-    'import/no-extraneous-dependencies': [
-      'off',
-      { devDependencies: ['gulpfile.babel.js', 'gulp/**/*'] },
-    ],
-    'import/no-import-module-exports': [
-      'off',
-      { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] },
-    ],
-    'import/resolver': [
-      'off',
-      { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] },
-    ],
-    'implicit-arrow-linebreak': [
-      'off',
-      { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] },
-    ],
+    'import/no-extraneous-dependencies': ['off', { devDependencies: ['gulpfile.babel.js', 'gulp/**/*'] }],
+    'import/no-import-module-exports': ['off', { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] }],
+    'import/resolver': ['off', { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] }],
+    'implicit-arrow-linebreak': ['off', { exceptions: ['gulpfile.babel.js', 'gulp/**/*'] }],
     'no-var': 'error',
     'object-curly-newline': 'off',
     'max-len': 'off',
@@ -38,6 +26,7 @@ module.exports = {
     semi: ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],
     'no-underscore-dangle': 'off',
+    'no-use-before-define': 'off',
   },
   settings: {
     'import/resolver': {

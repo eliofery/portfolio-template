@@ -1,6 +1,6 @@
 {
   "name": "portfolio-template",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Шаблон портфолио",
   "keywords": [
     "gulp",
@@ -105,6 +105,7 @@
     ]
   },
   "dependencies": {
+    "js-cookie": "^3.0.5",
     "normalize.css": "^8.0.1",
     "slick-carousel": "^1.8.1"
   }

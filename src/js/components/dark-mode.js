@@ -1,5 +1,5 @@
 /**
- * Темная тема
+ * Темный режим
  */
 import { getElementsByData } from '@/utils'
 

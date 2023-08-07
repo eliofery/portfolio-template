@@ -11,6 +11,9 @@ $accent: #ee1b24;
   --color-submenu: #{hextorgb(darken($white, 5%))};
   --color-submenu-hover: #{hextorgb(#dcdcdc)};
   --color-overlay: #{hextorgb(#c7c7c7)};
+
+  // Swiper
+  --swiper-theme-color: rgb(var(--color-accent)) !important;
 }
 
 @mixin dark-mode {
@@ -28,6 +31,7 @@ $accent: #ee1b24;
 }
 
 $font-primary: Roboto, -apple-system, Arial, sans-serif;
+$font-second: "Oswald", -apple-system, Arial, sans-serif;
 
 $fz: 16px;
 $lh: 1.5;

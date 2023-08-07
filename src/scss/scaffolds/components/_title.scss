@@ -1,0 +1,17 @@
+.title {
+  margin: 0 0 30px;
+
+  font-size: map-get($font-sizes, "xxl") / 1.5;
+  font-family: $font-second;
+  text-transform: uppercase;
+
+  &:first-letter {
+    color: rgb(var(--color-accent));
+  }
+}
+
+@include from(sm) {
+  .title {
+    font-size: map-get($font-sizes, "xxl");
+  }
+}

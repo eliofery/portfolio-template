@@ -29,6 +29,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-useless-return': 'off',
     'no-param-reassign': 'off',
+    'no-new': 'off',
   },
   settings: {
     'import/resolver': {

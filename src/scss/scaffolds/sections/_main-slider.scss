@@ -1,0 +1,83 @@
+.main-slider {
+  padding: 30px 0;
+}
+
+.main-slider__container {
+
+}
+
+.main-slider__wrap {
+
+}
+
+.main-slider__title {
+
+}
+
+.main-slider__list {
+  width: 100%;
+}
+
+.main-slider .swiper-wrapper {
+  height: calc(100vh - 230px);
+}
+
+.main-slider .swiper-slide {
+  height: 100%;
+
+  background-color: #ccc;
+}
+
+.main-slider .swiper-pagination {
+
+}
+
+.main-slider .swiper-button-next {
+
+}
+
+.main-slider .swiper-button-prev {
+
+}
+
+.no-js .main-slider .swiper-slide {
+  width: calc(100% / 3);
+  margin-right: 30px;
+}
+
+@include from(sm) {
+  .main-slider {
+    padding: 60px 0;
+  }
+
+  .main-slider .swiper-wrapper {
+    height: calc(100vh - 320px);
+  }
+}
+
+@include from(md) {
+  .main-slider {
+    padding: 80px 0;
+  }
+
+  .main-slider__wrap {
+    display: grid;
+    grid-template-columns: minmax($min-screen, 25%) minmax($min-screen, 1fr);
+
+    column-gap: $container-grid;
+  }
+
+  .main-slider__title {
+    grid-column: 1/2;
+  }
+
+  .main-slider__list {
+    grid-column: 2/4;
+  }
+}
+
+@include from(lg) {
+  .main-slider__wrap {
+    width: calc(100% + ($container-grid * 3) + ((100vw - 20px - map_get($container-sizes, "lg")) / 2)); // 20 scroll-width
+  }
+}

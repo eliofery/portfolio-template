@@ -61,8 +61,12 @@
   }
 
   .main-slider__wrap {
+    $scrollWidth: 20px;
+    $containerWidth: 100%;
+
     display: grid;
     grid-template-columns: minmax($min-screen, 25%) minmax($min-screen, 1fr);
+    width: calc($containerWidth + (100vw - $scrollWidth - $containerWidth) / 2);
 
     column-gap: $container-grid;
   }
@@ -73,11 +77,5 @@
 
   .main-slider__list {
     grid-column: 2/4;
-  }
-}
-
-@include from(lg) {
-  .main-slider__wrap {
-    width: calc(100% + ($container-grid * 3) + ((100vw - 20px - map_get($container-sizes, "lg")) / 2)); // 20 scroll-width
   }
 }

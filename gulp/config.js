@@ -56,11 +56,13 @@ const config = {
   // Эти стили не будут добавлены в main.scss
   ignoreScssPaths: [
     'scaffolds/components/_navigation.scss',
-    'scaffolds/components/logo',
-    'scaffolds/components/feature-menu',
-    'scaffolds/components/menu-toggle',
-    'scaffolds/sections/main-header',
-    'scaffolds/sections/main-slider',
+    'scaffolds/components/_logo.scss',
+    'scaffolds/components/_feature-menu.scss',
+    'scaffolds/components/_menu-toggle.scss',
+    'scaffolds/components/_title.scss',
+    'scaffolds/components/_swiper.scss',
+    'scaffolds/sections/_main-header.scss',
+    'scaffolds/sections/_main-slider.scss',
   ],
 
   proxy: 'http://localhost', // url виртуального хоста

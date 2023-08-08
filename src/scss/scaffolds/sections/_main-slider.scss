@@ -70,15 +70,11 @@
 
   color: white;
 
-  background-color: rgba(var(--color-accent), 0.6);
+  background-color: rgba(var(--color-accent), 0.8);
 
   opacity: 0;
 
   transition: $transition;
-}
-
-.dark-mode .main-slider__info {
-  background-color: rgba(var(--color-accent), 0.8);
 }
 
 .main-slider__slide.swiper-slide-active .main-slider__info {
@@ -95,7 +91,7 @@
 .main-slider__desc {
   margin: 0;
 
-  font-size: map-get($font-sizes, "xs");
+  font-size: map-get($font-sizes, "sm");
 }
 
 .main-slider__img img {
@@ -141,7 +137,7 @@
 }
 
 .main-slider .swiper-button-prev {
-  margin-right: 25px;
+  margin-right: 15px;
   margin-left: auto;
 }
 
@@ -155,7 +151,7 @@
 }
 
 .no-js .main-slider__list {
-  overflow: auto;
+  overflow-x: auto;
 }
 
 .no-js .main-slider .swiper-wrapper {

@@ -15,13 +15,13 @@ block content
               each item, index in jsonData.mainSlider.items
                 a.main-slider__slide.swiper-slide(href="#", data-slide=index)
                   p.main-slider__img
-                    +picture(item.img)(width="336", height="414", alt=item.alt)
+                    +picture(item.img)(width="492", height="420", alt=item.alt, loading="eager")
                   .main-slider__info
                     h3.main-slider__subtitle #{item.title}
                     p.main-slider__desc #{item.desc}
             .main-slider__toggles
               .swiper-pagination
-              button.swiper-button-prev(type="button")
+              button.swiper-button-prev(type="button", aria-label="Предыдущее портфолио")
                 +icon('icon-arrow-left')(width="30", height="30", aria-hidden="true")
-              button.swiper-button-next(type="button")
+              button.swiper-button-next(type="button", aria-label="Следующее портфолио")
                 +icon('icon-arrow-right')(width="30", height="30", aria-hidden="true")

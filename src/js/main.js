@@ -4,8 +4,9 @@ import translate from '@/components/google-translate'
 import search from '@/components/search'
 import slider from '@/components/slider'
 
+document.documentElement.classList.remove('no-js')
 navigation()
 darkMode()
-translate()
 search()
 slider()
+translate()

@@ -60,6 +60,7 @@ const config = {
     'scaffolds/components/feature-menu',
     'scaffolds/components/menu-toggle',
     'scaffolds/sections/main-header',
+    'scaffolds/sections/main-slider',
   ],
 
   proxy: 'http://localhost', // url виртуального хоста

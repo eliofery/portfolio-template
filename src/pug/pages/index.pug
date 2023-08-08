@@ -4,22 +4,24 @@ block variables
   - var pageTitle = "Главная страница";
   - var pageDesc = "";
 
-block content    
-  section.main-slider
-    .main-slider__container.container
-      .main-slider__wrap
-        h2.main-slider__title.title Портфолио
-        .main-slider__list.swiper
-          .swiper-wrapper
-            .swiper-slide Slide 1
-            .swiper-slide Slide 2
-            .swiper-slide Slide 3
-            .swiper-slide Slide 4
-            .swiper-slide Slide 5
-            .swiper-slide Slide 6
-            .swiper-slide Slide 7
-            .swiper-slide Slide 8
-            .swiper-slide Slide 9
-          .swiper-pagination
-          .swiper-button-next
-          .swiper-button-prev
+block content
+  if jsonData.mainSlider.items
+    section.main-slider
+      .main-slider__container.container
+        .main-slider__wrap
+          h2.main-slider__title.title #[a(href="#") Портфолио]
+          .main-slider__list.swiper
+            .swiper-wrapper
+              each item, index in jsonData.mainSlider.items
+                a.main-slider__slide.swiper-slide(href="#", data-slide=index)
+                  p.main-slider__img
+                    +picture(item.img)(width="336", height="414", alt=item.alt)
+                  .main-slider__info
+                    h3.main-slider__subtitle #{item.title}
+                    p.main-slider__desc #{item.desc}
+            .main-slider__toggles
+              .swiper-pagination
+              button.swiper-button-prev(type="button")
+                +icon('icon-arrow-left')(width="30", height="30", aria-hidden="true")
+              button.swiper-button-next(type="button")
+                +icon('icon-arrow-right')(width="30", height="30", aria-hidden="true")

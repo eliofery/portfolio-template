@@ -1,7 +1,5 @@
-@use "sass:math";
-
 .title {
-  font-size: math.div(map-get($font-sizes, "xxl"), 1.3);
+  font-size: map-get($font-sizes, "xxl");
   font-family: $font-second;
   text-transform: uppercase;
 
@@ -12,16 +10,11 @@
 
 .title a {
   color: rgb(var(--color-text));
+  text-decoration: none;
 }
 
 @include from(sm) {
-  .title {
-    font-size: map-get($font-sizes, "xxl");
-  }
-
   .title a {
-    text-decoration: none;
-
     &:hover,
     &:focus {
       text-decoration: underline;

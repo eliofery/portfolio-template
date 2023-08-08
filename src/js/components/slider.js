@@ -19,14 +19,13 @@ const swiper = () => {
     slidesPerView: '1',
     spaceBetween: 20,
     breakpoints: {
-      700: {
-        slidesPerView: '1.5',
+      450: {
+        slidesPerView: '1.2',
       },
-      960: {
-        slidesPerView: '2.5',
+      700: {
+        slidesPerView: '2.2',
       },
       1080: {
-        slidesPerView: '2.2',
         spaceBetween: 30,
       },
       1400: {

@@ -19,7 +19,7 @@
 
   .main-section__wrap {
     display: grid;
-    grid-template-columns: minmax(435px, 25%) minmax($min-screen, 1fr);
+    grid-template-columns: minmax(300px, auto) minmax($min-screen, 1fr);
 
     column-gap: 30px;
   }

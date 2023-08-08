@@ -28,7 +28,7 @@
   // Горизонтально
   @media (min-aspect-ratio: 10 / 8) {
     height: 420px;
-    min-height: 100%;
+    min-height: auto;
   }
 }
 
@@ -185,10 +185,6 @@
 }
 
 @include from(sm) {
-  .main-slider__title {
-    margin: 0;
-  }
-
   .main-slider__slide.swiper-slide-active:hover .main-slider__info,
   .main-slider__slide.swiper-slide-active:focus .main-slider__info,
   .main-slider__slide:hover .main-slider__info,

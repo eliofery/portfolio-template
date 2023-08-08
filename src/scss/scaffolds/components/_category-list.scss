@@ -1,0 +1,42 @@
+.category-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.category-list__link {
+  position: relative;
+
+  align-self: flex-start;
+
+  color: rgb(var(--color-text));
+  font-size: map-get($font-sizes, "md");
+  text-decoration: none;
+
+  &::before {
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    left: 0;
+
+    height: 2px;
+
+    background-color: rgb(var(--color-accent));
+
+    transition: $transition;
+
+    content: "";
+  }
+}
+
+@include from(sm) {
+  .category-list__link:hover,
+  .category-list__link:focus {
+    &::before {
+      right: 15%;
+      left: 15%;
+
+      width: auto;
+    }
+  }
+}

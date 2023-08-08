@@ -13,7 +13,7 @@ block content
           .main-slider__list.swiper
             .swiper-wrapper
               each item, index in jsonData.mainSlider.items
-                a.main-slider__slide.swiper-slide(href="#", data-slide=index)
+                a.main-slider__slide.swiper-slide(href="#")
                   p.main-slider__img
                     +picture(item.img)(width="492", height="420", alt=item.alt, loading="eager")
                   .main-slider__info
@@ -29,5 +29,26 @@ block content
   section.main-blog.main-section
     .main-blog__container.container
       .main-blog__wrap.main-section__wrap
-        h2.main-section__title.title #[a(href="#") Блог]
-        .main-slider__content Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus assumenda atque doloremque eveniet ex fugiat fugit, incidunt inventore ipsa natus nesciunt nisi nulla placeat quae qui quis quod similique tempore velit vero vitae voluptas voluptatem! Aspernatur at aut consequuntur debitis dicta dignissimos doloremque doloribus dolorum earum, excepturi, fuga magni maxime molestiae nam neque nihil nobis non obcaecati officiis optio pariatur perspiciatis placeat quasi quibusdam repellat sint tempora unde ut vel velit? Aut dicta dolores excepturi incidunt labore magni quisquam voluptatum! Accusamus aliquid corporis distinctio ducimus molestiae nisi quidem? Aliquam amet beatae consequuntur illum inventore pariatur possimus repellendus, voluptate! Adipisci, corporis cum dicta dolor dolorum earum et explicabo illum incidunt libero perferendis perspiciatis, porro quasi quis quo veniam voluptas, voluptatum. Adipisci architecto distinctio enim eos et, eveniet expedita explicabo facere harum impedit, ipsa ipsum iste maxime nemo non, odio odit perspiciatis porro possimus provident quis repellendus rerum voluptatum! Ad autem debitis error est facere facilis iusto natus quibusdam. A aliquid architecto corporis deleniti earum libero nulla obcaecati voluptas? Ab accusamus dignissimos distinctio earum in ipsa ipsum itaque officia quibusdam sit! Consequuntur doloribus excepturi impedit labore, minus nam! Aspernatur ea exercitationem facilis illo inventore nesciunt perspiciatis quia! Ab accusantium amet animi aspernatur atque beatae consectetur consequatur, consequuntur deserunt, dicta dolore excepturi explicabo id laborum magni maiores minima modi nostrum numquam quae recusandae sapiente sed, suscipit. Amet assumenda at corporis culpa cum dolores doloribus facere ipsam laudantium, molestias nulla odit omnis, qui quis quod repellendus tempora, velit voluptate. Accusantium aliquid aut cupiditate delectus dolore doloremque esse est et eveniet expedita facilis fugiat ipsam, itaque laboriosam nam nesciunt numquam odio quia recusandae rem sit soluta totam veritatis voluptas voluptatibus! Amet animi, cupiditate deleniti eveniet excepturi expedita iure, maiores perspiciatis porro possimus quam repellendus repudiandae sint? Accusamus accusantium asperiores at consectetur non soluta temporibus. Accusamus, architecto consectetur, cupiditate deleniti dolor doloremque earum fugiat ipsum, labore laborum libero maxime minima molestiae possimus quisquam repellat reprehenderit repudiandae sapiente soluta tenetur! Accusamus animi aut commodi, consequatur culpa eaque eum illo incidunt ipsa labore nobis odit praesentium quam, sapiente tempore velit voluptas voluptatem? Aperiam architecto, asperiores at commodi corporis dignissimos hic modi molestias numquam obcaecati officiis pariatur placeat porro quibusdam repudiandae tempore vel vitae, voluptatem? Amet consequuntur delectus, dolore doloremque, eum ex explicabo fugit incidunt ipsam iste magni necessitatibus odio, officia quam quas quasi sit soluta voluptatem! Architecto aspernatur eum illum magnam nisi numquam odio repellat similique voluptate voluptatibus. A adipisci, alias blanditiis, corporis ducimus error id itaque iure obcaecati omnis recusandae, suscipit? Alias aliquam, animi asperiores assumenda at beatae cum deleniti dolorem dolores earum eos esse eveniet expedita facilis id impedit ipsum labore laudantium maiores natus necessitatibus odit omnis praesentium quae quam quo reiciendis reprehenderit rerum similique vel? Corporis delectus enim molestias optio porro ratione reiciendis reprehenderit, rerum sint? Architecto id in iure libero magni nobis officia optio quasi quos voluptate. Corporis incidunt molestiae quaerat sint vero. Aliquam aperiam dolor iste maxime natus nemo neque officia porro quos repellendus. Ab aut consequatur ducimus est, nihil odio quasi.
+        h2.main-blog__title.main-section__title.title #[a(href="#") Блог]
+        .main-blog__content
+          h3.main-blog__subtitle.main-blog__subtitle--article Последние записи
+          if jsonData.mainArticle.items
+            each item in jsonData.mainArticle.items
+              article.main-blog__block.card-article__block
+                a.card-article__link(href=item.link)
+                  footer.card-article__meta
+                    time.card-article__date(datetime=item.date) #{item.dateText}
+                    span.card-article__read #{item.read}
+                  h3.card-article__title #{item.title}
+                  .card-article__desc
+                    p #{item.desc}
+
+          h3.main-blog__subtitle.main-blog__subtitle--blog Категории
+          .main-blog__list.category-list
+            a.category-list__link(href="#") Веб дизайн (23)
+            a.category-list__link(href="#") Frontend (12)
+            a.category-list__link(href="#") Backend (10)
+            a.category-list__link(href="#") SEO (3)
+            a.category-list__link(href="#") DevOps (5)
+            a.category-list__link(href="#") Все записи (53)
+            

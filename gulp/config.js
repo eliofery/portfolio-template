@@ -61,6 +61,7 @@ const config = {
     'scaffolds/components/_menu-toggle.scss',
     'scaffolds/components/_title.scss',
     'scaffolds/components/_swiper.scss',
+    'scaffolds/components/_main-section.scss',
     'scaffolds/sections/_main-header.scss',
     'scaffolds/sections/_main-slider.scss',
   ],

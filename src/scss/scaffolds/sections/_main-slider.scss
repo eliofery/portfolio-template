@@ -1,5 +1,5 @@
 .main-slider {
-  padding: 30px 0;
+  margin-top: 50px;
 }
 
 .main-slider__container {
@@ -19,7 +19,17 @@
 }
 
 .main-slider .swiper-wrapper {
-  height: 420px;
+  // Вертикально
+  @media (min-aspect-ratio: 9 / 26) {
+    height: calc(100vh - 400px);
+    min-height: 265px;
+  }
+
+  // Горизонтально
+  @media (min-aspect-ratio: 10 / 8) {
+    height: 420px;
+    min-height: 100%;
+  }
 }
 
 .main-slider__slide {
@@ -51,7 +61,7 @@
     width: 100%;
     height: 100%;
 
-    background-image: radial-gradient(ellipse at center, rgba(181,189,200,0) 0%,rgba(130,140,149,0) 50%,rgba(40,52,59,1) 100%);
+    background-image: radial-gradient(ellipse at center, rgba(181, 189, 200, 0) 0%, rgba(130, 140, 149, 0) 50%, rgba(40, 52, 59, 1) 100%);
     background-repeat: no-repeat, repeat;
     background-size: 100% 100%, 30px 30px;
 
@@ -170,15 +180,11 @@
 .no-js .main-slider__slide.swiper-slide-active:hover .main-slider__info,
 .no-js .main-slider__slide.swiper-slide-active:focus .main-slider__info,
 .no-js .main-slider__slide:hover .main-slider__info,
-.no-js .main-slider__slide:focus .main-slider__info{
+.no-js .main-slider__slide:focus .main-slider__info {
   opacity: 1;
 }
 
 @include from(sm) {
-  .main-slider {
-    padding: 60px 0;
-  }
-
   .main-slider__title {
     margin: 0;
   }
@@ -224,19 +230,11 @@
 }
 
 @include from(md) {
-  .main-slider {
-    padding: 80px 0;
-  }
-
   .main-slider__wrap {
     $scrollWidth: 20px;
     $containerWidth: 100%;
 
-    display: grid;
-    grid-template-columns: minmax($min-screen, 25%) minmax($min-screen, 1fr);
     width: calc($containerWidth + (100vw - $scrollWidth - $containerWidth) / 2);
-
-    column-gap: 30px;
   }
 
   .main-slider__title {

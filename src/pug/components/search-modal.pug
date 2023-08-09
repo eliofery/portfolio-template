@@ -2,10 +2,11 @@
 mixin search-modal
   .modal-search(data-el="search", hidden)&attributes(attributes)
     .modal-search__content
-      button.modal-search__toggle(type="button", data-el="search-close", aria-label="Закрыть поиск")
       p.modal-search__field
         +icon("icon-search")(class="modal-search__icon", width="24", height="24", aria-label="false")
         input.modal-search__input(data-el="search-input", placeholder="Поиск по сайту")
       .modal-search__result(data-el="search-result")
         .modal-search__item.modal-search__item--not-found
           .modal-search__item-wrap Введите ваш запрос
+      button.modal-search__toggle(type="button", data-el="search-close", aria-label="Закрыть поиск")
+    

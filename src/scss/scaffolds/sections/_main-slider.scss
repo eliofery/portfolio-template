@@ -21,13 +21,13 @@
 .main-slider .swiper-wrapper {
   // Вертикально
   @media (min-aspect-ratio: 9 / 26) {
-    height: calc(100vh - 400px);
-    min-height: 265px;
+    height: calc(100vh - 300px);
+    min-height: 250px;
   }
 
   // Горизонтально
   @media (min-aspect-ratio: 10 / 8) {
-    height: 420px;
+    height: 450px;
     min-height: auto;
   }
 }

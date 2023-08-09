@@ -21,3 +21,10 @@
     }
   }
 }
+
+@include from(md) {
+  .title a {
+    position: sticky;
+    top: 10px;
+  }
+}

@@ -110,7 +110,7 @@ const navigation = () => {
 
       const id = link.getAttribute('href')
       const target = document.querySelector(id)
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY
+      const offsetTop = target.getBoundingClientRect().top
 
       closeToggle.click()
 

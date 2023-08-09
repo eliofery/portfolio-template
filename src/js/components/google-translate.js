@@ -78,10 +78,12 @@ function cookieHandler(val, domain) {
   Cookies.set('googtrans', val, {
     domain: document.domain,
     path: '/',
+    // sameSite: 'strict',
   })
   Cookies.set('googtrans', val, {
     domain: `.${document.domain}`,
     path: '/',
+    // sameSite: 'strict',
   })
 
   if (domain === 'undefined') return
@@ -89,11 +91,13 @@ function cookieHandler(val, domain) {
   Cookies.set('googtrans', val, {
     domain,
     path: '/',
+    // sameSite: 'strict',
   })
 
   Cookies.set('googtrans', val, {
     domain: `.${domain}`,
     path: '/',
+    // sameSite: 'strict',
   })
 }
 

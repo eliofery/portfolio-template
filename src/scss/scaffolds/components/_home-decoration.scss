@@ -1,0 +1,25 @@
+.home-decoration {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  z-index: -1;
+
+  width: 80vw;
+  max-width: 960px;
+
+  transform: translateX(-50%);
+}
+
+.dark-mode .home-decoration path {
+  fill: rgba(var(--color-accent), 0.2);
+}
+
+.no-js .home-decoration {
+  display: none;
+}
+
+@include from(md) {
+  .home-decoration {
+    width: 50vw;
+  }
+}

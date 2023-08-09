@@ -1,17 +1,29 @@
 .category-list {
+  @include list-reset;
+
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
 }
 
 .category-list__link {
   position: relative;
 
   align-self: flex-start;
+  margin-bottom: 15px;
 
   color: rgb(var(--color-text));
-  font-size: map-get($font-sizes, "md");
+  font-size: map-get($font-sizes, "sm");
   text-decoration: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.category-list__link[href] {
+  margin-bottom: 20px;
+
+  font-size: map-get($font-sizes, "md");
 
   &::before {
     position: absolute;

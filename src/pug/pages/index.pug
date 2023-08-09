@@ -6,11 +6,11 @@ block variables
 
 block content
   if jsonData.mainSlider.items
-    section.main-slider.main-section
+    section#portfolio.main-slider.main-section
       .main-slider__container.container
         .main-slider__wrap.main-section__wrap
           h2.main-slider__title.main-section__title.title #[a(href="#") Портфолио]
-          .main-slider__list.swiper
+          .main-slider__list.main-section__content.swiper
             .swiper-wrapper
               each item, index in jsonData.mainSlider.items
                 a.main-slider__slide.swiper-slide(href="#")
@@ -26,13 +26,13 @@ block content
               button.swiper-button-next(type="button", aria-label="Следующее портфолио")
                 +icon('icon-arrow-right')(width="30", height="30", aria-hidden="true")
 
-  section.main-blog.main-section
-    .main-blog__container.container
-      .main-blog__wrap.main-section__wrap
-        h2.main-blog__title.main-section__title.title #[a(href="#") Блог]
-        .main-blog__content
-          h3.main-blog__subtitle.main-blog__subtitle--article Последние записи
-          if jsonData.mainArticle.items
+  if jsonData.mainArticle.items
+    section#blog.main-blog.main-section
+      .main-blog__container.container
+        .main-blog__wrap.main-section__wrap
+          h2.main-blog__title.main-section__title.title #[a(href="#") Блог]
+          .main-blog__content.main-section__content
+            h3.main-blog__subtitle.main-blog__subtitle--article Последние записи
             each item in jsonData.mainArticle.items
               article.main-blog__block.card-article__block
                 a.card-article__link(href=item.link)
@@ -42,13 +42,39 @@ block content
                   h3.card-article__title #{item.title}
                   .card-article__desc
                     p #{item.desc}
+            h3.main-blog__subtitle.main-blog__subtitle--blog Категории
+            .main-blog__list.category-list
+              a.category-list__link(href="#") Веб дизайн (23)
+              a.category-list__link(href="#") Frontend (12)
+              a.category-list__link(href="#") Backend (10)
+              a.category-list__link(href="#") SEO (3)
+              a.category-list__link(href="#") DevOps (5)
+              a.category-list__link(href="#") Все записи (53)
 
-          h3.main-blog__subtitle.main-blog__subtitle--blog Категории
-          .main-blog__list.category-list
-            a.category-list__link(href="#") Веб дизайн (23)
-            a.category-list__link(href="#") Frontend (12)
-            a.category-list__link(href="#") Backend (10)
-            a.category-list__link(href="#") SEO (3)
-            a.category-list__link(href="#") DevOps (5)
-            a.category-list__link(href="#") Все записи (53)
-            
+  section#about.main-about.main-section
+    .main-about__container.container
+      .main-about__wrap.main-section__wrap
+        h2.main-about__title.main-section__title.title #[a(href="#") Обо мне]
+        .main-about__content.main-section__content
+          .main-about__desc
+            p Веб-разработчик с 3-х летним продуктовым опытом работы. Мои навыки охватывают широкий спектр технологий, начиная от фундаментальных HTML, CSS, JavaScript и PHP, и заканчивая фреймворками и системами управления контентом, такие как Laravel, Vue и Wordpress.
+            p Мой опыт включает в себя разработку отзывчивых, доступных и интерактивных сайтов. Я уверенно работаю с фронтендом и бэкендом, что позволяет мне создавать полноценные и современные веб-приложения.            
+            p Стремлюсь к непрерывному совершенствованию и постоянно обогащаю свои знания новыми навыками и технологиями.
+          .main-about__block.main-about__block--skill
+            h3.main-about__subtitle Навыки
+            ul.main-about__list.category-list
+              li.category-list__link Дизайн коммерческих сайтов
+              li.category-list__link Frontend разработка
+              li.category-list__link Backend разработка
+              li.category-list__link Администрирование веб серверов
+          .main-about__block.main-about__block--tech
+            h3.main-about__subtitle Технологии
+            ul.main-about__list.category-list
+              li.category-list__link Gulp / Scss / Pug
+              li.category-list__link Vue 3 / Webpack
+              li.category-list__link Laravel / Docker / Mysql
+              li.category-list__link Wordpress / Jekyll
+              li.category-list__link Apache / Nginx
+
+  .home-decoration(data-el="shape")
+    include ../parts/home-bg.pug

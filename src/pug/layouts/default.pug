@@ -34,18 +34,19 @@ html.no-js(lang="ru")
         #[b Javascript] отключен, некоторые функции сайта недоступны.<br>
         Пожалуйста #[a(rel="nofollow", href="https://support.google.com/adsense/answer/12654", target="_blank") включите javascript]!<br>
 
-    block header
-      include ../parts/header.pug
+    .layout
+      block header
+        include ../parts/header.pug
 
-    main
-      block content
+      main.layout__main
+        block content
 
-    block footer
-      include ../parts/footer.pug
+      block footer
+        include ../parts/footer.pug
 
     block modal
       +search-modal()
-        
+
     block scripts
       script(src="./js/main.js?v=" + siteVersion, type="module")
         

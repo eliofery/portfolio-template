@@ -1,1 +1,13 @@
-footer.main-footer
+footer#contacts.main-footer.main-section
+    .main-footer__container.container
+        .main-footer__wrap.main-section__wrap
+            .main-footer__copyright ©2022 Все права защищены
+            .main-footer__content.main-section__content
+                .main-footer__email Связаться со мной: #[a(href="#") some@email.domen]
+                ul.main-footer__social.social
+                    li.social__item
+                        a.social__link(href="#", aria-label="Профиль Github")
+                            +icon("icon-github")(class="social__icon", width="20", height="20", aria-hidden="true")
+                    li.social__item
+                        a.social__link(href="#", aria-label="Профиль Linkedin")
+                            +icon("icon-linkedin")(class="social__icon", width="20", height="20", aria-hidden="true")

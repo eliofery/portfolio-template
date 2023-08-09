@@ -14,6 +14,8 @@ const navigation = () => {
     'nav-overlay': overlay,
   } = getElementsByData('el')
 
+  const navElements = nav.querySelectorAll('a[href^="#"]')
+
   // Закрыть меню
   const onEscapeNav = evt => {
     // Основное меню
@@ -101,6 +103,23 @@ const navigation = () => {
   backToggles.forEach(toggle => toggle.addEventListener('click', onCloseMenu))
   overlay.addEventListener('click', onCloseNav)
   window.addEventListener('resize', onResize)
+
+  navElements.forEach(link => {
+    link.addEventListener('click', evt => {
+      evt.preventDefault()
+
+      const id = link.getAttribute('href')
+      const target = document.querySelector(id)
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY
+
+      closeToggle.click()
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      })
+    })
+  })
 }
 
 export default navigation

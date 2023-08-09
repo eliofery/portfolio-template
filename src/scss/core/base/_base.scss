@@ -60,10 +60,30 @@ b {
   font-weight: 500;
 }
 
+p {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .sr-only {
   @include sr-only;
 }
 
 .overlay {
   @include overlay(var(--color-overlay));
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.layout__main {
+  flex-grow: 1;
 }

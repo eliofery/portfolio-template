@@ -1,0 +1,46 @@
+extends ../layouts/default.pug
+
+block variables
+  - var pageTitle = "Блог";
+  - var pageDesc = "Статьи про веб разработку";
+
+block content
+  section.inner-blog.main-section
+    .inner-blog__container.container
+      .inner-blog__wrap.main-section__wrap
+        h2.inner-blog__title.main-section__title.title #[span Блог]
+        .inner-blog__content
+          ul.inner-blog__list
+            each item in jsonData.mainArticle.items
+              li.inner-blog__item
+                article.inner-blog__card.card-article
+                  a.card-article__link(href=item.link)
+                    .card-article__img
+                      +picture("https://via.placeholder.com/390x219.jpg")(class="card-article__pic", width="390", height="219", alt=item.alt)
+                    footer.card-article__meta
+                      time.card-article__date(datetime=item.date) #{item.dateText}
+                      span.card-article__read #{item.read}
+                    h3.card-article__title #{item.title}
+                    .card-article__desc
+                      p #{item.desc}
+          
+          ol.inner-blog__pagination.page-pagination
+            li.page-pagination__item.page-pagination__item--prev
+              a.page-pagination__link(href="#", aria-label="Предыдущее")
+                +icon('icon-arrow-left')(class="page-pagination__icon", width="25", height="25", aria-hidden="true")
+            li.page-pagination__item.page-pagination__item--active
+              a.page-pagination__link(href="#") 1
+            li.page-pagination__item
+              a.page-pagination__link(href="#") 2
+            li.page-pagination__item
+              a.page-pagination__link(href="#") 3
+            li.page-pagination__item
+              a.page-pagination__link(href="#") 4
+            li.page-pagination__item
+              a.page-pagination__link(href="#") 5
+            li.page-pagination__item.page-pagination__item--next
+              a.page-pagination__link(href="#", aria-label="Следующее")
+                +icon('icon-arrow-right')(class="page-pagination__icon", width="25", height="25", aria-hidden="true")
+            
+  .shape-decoration(data-el="shape")
+    include ../parts/home-bg.pug

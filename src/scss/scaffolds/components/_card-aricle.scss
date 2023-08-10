@@ -10,13 +10,28 @@
   }
 }
 
-.card-article__block {
-
-}
-
 .card-article__link {
   color: rgb(var(--color-text));
   text-decoration: none;
+}
+
+.card-article__img {
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  background-color: rgb(var(--color-text), 0.1);
+}
+
+.card-article__pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  line-height: 0;
+
+  transition: $transition;
 }
 
 .card-article__meta {
@@ -62,6 +77,11 @@
 }
 
 @include from(sm) {
+  .card-article__link:hover .card-article__pic,
+  .card-article__link:focus .card-article__pic {
+    transform: scale(1.1);
+  }
+
   .card-article__link:hover .card-article__title,
   .card-article__link:focus .card-article__title {
     text-decoration: underline;

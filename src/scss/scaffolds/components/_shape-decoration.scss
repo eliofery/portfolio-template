@@ -1,4 +1,4 @@
-.home-decoration {
+.shape-decoration {
   position: absolute;
   top: 80px;
   left: 50%;
@@ -10,16 +10,16 @@
   transform: translateX(-50%);
 }
 
-.dark-mode .home-decoration path {
+.dark-mode .shape-decoration path {
   fill: rgba(var(--color-accent), 0.2);
 }
 
-.no-js .home-decoration {
+.no-js .shape-decoration {
   display: none;
 }
 
 @include from(md) {
-  .home-decoration {
+  .shape-decoration {
     width: 50vw;
   }
 }

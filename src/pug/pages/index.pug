@@ -30,11 +30,11 @@ block content
     section#blog.main-blog.main-section
       .main-blog__container.container
         .main-blog__wrap.main-section__wrap
-          h2.main-blog__title.main-section__title.title #[a(href="#") Блог]
+          h2.main-blog__title.main-section__title.title #[a(href="/blog.html") Блог]
           .main-blog__content.main-section__content
             h3.main-blog__subtitle.main-blog__subtitle--article Последние записи
             each item in jsonData.mainArticle.items
-              article.main-blog__block.card-article__block
+              article.main-blog__block.card-article
                 a.card-article__link(href=item.link)
                   footer.card-article__meta
                     time.card-article__date(datetime=item.date) #{item.dateText}
@@ -76,5 +76,5 @@ block content
               li.category-list__link Wordpress / Jekyll
               li.category-list__link Apache / Nginx
 
-  .home-decoration(data-el="shape")
+  .shape-decoration(data-el="shape")
     include ../parts/home-bg.pug

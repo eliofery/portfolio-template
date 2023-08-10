@@ -14,7 +14,8 @@
 }
 
 @include from(sm) {
-  .title a {
+  .title a,
+  .title span {
     &:hover,
     &:focus {
       text-decoration: underline;
@@ -23,7 +24,8 @@
 }
 
 @include from(md) {
-  .title a {
+  .title a,
+  .title span{
     position: sticky;
     top: 10px;
   }

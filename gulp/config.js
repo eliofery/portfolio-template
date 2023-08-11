@@ -62,8 +62,12 @@ const config = {
     'scaffolds/components/_title.scss',
     'scaffolds/components/_swiper.scss',
     'scaffolds/components/_main-section.scss',
+    'scaffolds/components/_card-article.scss',
+    'scaffolds/components/_shape-decoration.scss',
+
     'scaffolds/sections/_main-header.scss',
     'scaffolds/sections/_main-slider.scss',
+    'scaffolds/sections/_inner-category.scss',
   ],
 
   proxy: 'http://localhost', // url виртуального хоста

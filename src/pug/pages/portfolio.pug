@@ -1,17 +1,17 @@
 extends ../layouts/default.pug
 
 block variables
-  - var pageTitle = "Блог";
-  - var pageDesc = "Статьи про веб разработку";
+  - var pageTitle = "Портфолио";
+  - var pageDesc = "Список выполненных работ";
 
 block content
   section.inner-category.main-section
     .inner-category__container.container
       .inner-category__wrap.main-section__wrap
-        h2.inner-category__title.main-section__title.title #[span Блог]
+        h2.inner-category__title.main-section__title.title #[span Портфолио]
         .inner-category__content
           ul.inner-category__list
-            each item in jsonData.mainArticle.items
+            each item in jsonData.mainPortfolio.items
               li.inner-category__item
                 article.inner-category__card.card-article
                   a.card-article__link(href=item.link)

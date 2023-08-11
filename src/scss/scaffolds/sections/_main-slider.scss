@@ -1,5 +1,5 @@
 .main-slider {
-  margin-top: 50px;
+
 }
 
 .main-slider__container {
@@ -226,10 +226,6 @@
 }
 
 @include from(md) {
-  .main-slider {
-    margin-top: 80px;
-  }
-
   .main-slider__wrap {
     $scrollWidth: 20px;
     $containerWidth: 100%;
@@ -249,5 +245,9 @@
 @include from(lg) {
   .main-slider__info {
     min-height: 100px;
+  }
+
+  .main-slider .swiper-button-prev {
+    margin-left: 74%;
   }
 }

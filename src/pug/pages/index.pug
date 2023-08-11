@@ -9,7 +9,7 @@ block content
     section#portfolio.main-slider.main-section
       .main-slider__container.container
         .main-slider__wrap.main-section__wrap
-          h2.main-slider__title.main-section__title.title #[a(href="#") Портфолио]
+          h2.main-slider__title.main-section__title.title #[a(href="portfolio.html") Портфолио]
           .main-slider__list.main-section__content.swiper
             .swiper-wrapper
               each item, index in jsonData.mainSlider.items
@@ -30,7 +30,7 @@ block content
     section#blog.main-blog.main-section
       .main-blog__container.container
         .main-blog__wrap.main-section__wrap
-          h2.main-blog__title.main-section__title.title #[a(href="/blog.html") Блог]
+          h2.main-blog__title.main-section__title.title #[a(href="blog.html") Блог]
           .main-blog__content.main-section__content
             h3.main-blog__subtitle.main-blog__subtitle--article Последние записи
             each item in jsonData.mainArticle.items
@@ -54,7 +54,7 @@ block content
   section#about.main-about.main-section
     .main-about__container.container
       .main-about__wrap.main-section__wrap
-        h2.main-about__title.main-section__title.title #[a(href="#") Обо мне]
+        h2.main-about__title.main-section__title.title #[span Обо мне]
         .main-about__content.main-section__content
           .main-about__desc
             p Веб-разработчик с 3-х летним продуктовым опытом работы. Мои навыки охватывают широкий спектр технологий, начиная от фундаментальных HTML, CSS, JavaScript и PHP, и заканчивая фреймворками и системами управления контентом, такие как Laravel, Vue и Wordpress.

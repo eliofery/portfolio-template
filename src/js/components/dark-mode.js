@@ -1,10 +1,10 @@
 /**
  * Темный режим
  */
-import { getElementsByData } from '@/utils'
+import { getElementsByData } from '@/_utils'
 
 const darkMode = () => {
-  const { 'dark-mode': darkModeToggles, 'dark-mode-icon': darkModeIcons } = getElementsByData('el')
+  const { 'dark-mode': darkModeToggles, 'dark-mode-icon': darkModeIcons, likely } = getElementsByData('el')
   const schemeSystem = window.matchMedia('(prefers-color-scheme: dark)')
   let mode = localStorage.getItem('color-scheme')
 
@@ -22,19 +22,26 @@ const darkMode = () => {
     })
   }
 
+  // Сброс темы
+  const rebootScheme = () => {
+    document.documentElement.classList.remove('dark-mode')
+    if (likely) likely.classList.remove('likely-dark-theme')
+  }
+
   // Меняет цветовую схему
   const changeColorScheme = isSchemeSystemDark => {
     // Сброс по умолчанию
-    document.documentElement.classList.remove('dark-mode')
+    rebootScheme()
 
     // Темная тема - ОС или выбранный режим на сайте
     if (isSchemeSystemDark || mode === 'dark') {
       document.documentElement.classList.add('dark-mode')
+      if (likely) likely.classList.add('likely-dark-theme')
     }
 
     // Светлая тема - выбранный режим на сайте
     if (mode === 'light') {
-      document.documentElement.classList.remove('dark-mode')
+      rebootScheme()
     }
 
     changeIcon()

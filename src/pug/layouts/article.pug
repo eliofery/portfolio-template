@@ -1,0 +1,7 @@
+extends default.pug
+
+block header
+  include ../parts/header/header-article.pug
+
+block scripts
+  script(src="./js/article.js?v=" + siteVersion, type="module")

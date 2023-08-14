@@ -68,6 +68,7 @@ const config = {
     'scaffolds/sections/_main-header.scss',
     'scaffolds/sections/_main-slider.scss',
     'scaffolds/sections/_inner-category.scss',
+    'scaffolds/sections/_main-article.scss',
   ],
 
   proxy: 'http://localhost', // url виртуального хоста

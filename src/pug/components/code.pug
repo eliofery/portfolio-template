@@ -1,0 +1,14 @@
+mixin code(language)
+  - var title = language.toUpperCase();
+
+  .code-block
+    .code-block__header
+      .code-block__name #{ title }
+      button.code-block__button(data-clipboard-action="copy", aria-label="Скопировать в буфер обмена")
+        +icon("icon-copy")(class="code-block__icon", width="12", height="12", aria-hidden="false")
+        span Копировать
+    .code-block__content
+      pre
+        code(class=language)
+          if block
+            block

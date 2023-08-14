@@ -2,7 +2,7 @@
  * Поиск по сайту
  */
 
-import { debounce, getElementsByData } from '@/utils'
+import { debounce, getElementsByData } from '@/_utils'
 import searchItems from '@/../pug/data/searchItems.json'
 
 const search = () => {

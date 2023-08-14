@@ -34,9 +34,11 @@ body {
   transition: background-color 0.3s ease;
 }
 
-img {
+img, iframe, object, embed {
   max-width: 100%;
   height: auto;
+
+  background-color: rgb(var(--color-text), 0.1);
 }
 
 button {
@@ -52,6 +54,15 @@ button {
 
     font-weight: 500;
     font-size: $size;
+  }
+
+  h1 + #{$headline},
+  h2 + #{$headline},
+  h3 + #{$headline},
+  h4 + #{$headline},
+  h5 + #{$headline},
+  h6 + #{$headline} {
+    margin-top: 0;
   }
 }
 

@@ -36,6 +36,10 @@
 
 }
 
+//.inner-category__pagination {
+//  justify-content: center;
+//}
+
 @include from(sm) {
   .inner-category__list {
     --gap: 40px;

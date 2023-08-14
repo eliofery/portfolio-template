@@ -2,6 +2,12 @@
   padding: 20px 0;
 }
 
+.main-header--article {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
 .main-header__container {
   display: flex;
   align-items: center;

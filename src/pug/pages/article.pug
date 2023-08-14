@@ -1,4 +1,4 @@
-extends ../layouts/default.pug
+extends ../layouts/article.pug
 
 block variables
   - var pageTitle = "Как создать красивую анимацию через css стили и js";
@@ -6,4 +6,58 @@ block variables
   - var ogType = "article";
 
 block content
-  
+  article.main-article    
+    header.main-article__header
+      .main-article__header-container.container
+        h1.main-article__title #[span(class="main-article__title-accent") Как] создать красивую анимацию через css стили и js без использования сторонних библиотек
+        .main-article__desc
+          p Цель создание интернет магазина детской одежды для онлайн продаж.
+
+        dl.main-article__info
+          dt.main-article__info-title Год:
+          dd.main-article__info-desc 2023
+          dt.main-article__info-title Направления:
+          dd.main-article__info-desc
+            ul.main-article__info-list
+              li.main-article__info-item дизайн
+              li.main-article__info-item верстка
+              li.main-article__info-item backend
+          dt.main-article__info-title Технологии:
+          dd.main-article__info-desc
+            ul.main-article__info-list
+              li.main-article__info-item figma
+              li.main-article__info-item vue
+              li.main-article__info-item laravel
+              li.main-article__info-item gulp
+              li.main-article__info-item scss
+              li.main-article__info-item pug                
+        .main-article__share.likely(data-el="likely")
+          .telegram(role="link", aria-label="Поделиться через Телеграм") Поделиться
+          .linkedin(role="link", aria-label="Поделиться через Linkedin")            
+          .whatsapp(role="link", aria-label="Поделиться через Whatsapp")
+          .vkontakte(role="link", aria-label="Поделиться через Вконтакте")
+          .twitter(role="link", aria-label="Поделиться через Twitter")
+          .facebook(role="link", aria-label="Поделиться через Facebook")
+
+    .main-article__content
+      .main-article__content-container.container
+        h2 Введение
+        h3 Параграф первый
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eveniet ex harum minima sequi tempora vel. Assumenda blanditiis ea eius incidunt iure minima nisi vero voluptatibus. Iste nisi praesentium quaerat?
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut beatae cumque, dicta dolore ducimus eligendi fuga ipsa laboriosam laborum maxime nam nemo nostrum quam quis, sint, unde veritatis! Et, porro?
+        img(src="http://via.placeholder.com/1980x500", width="1980", height="500", alt="Картинка")
+        h3 Параграф второй
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi distinctio dolorum eius expedita explicabo harum illum iusto nam necessitatibus nisi quam, qui repellendus reprehenderit sint totam voluptatum? Doloribus dolorum ea eum impedit molestiae nam quas quos ut vel veniam. Consequatur cumque dolores inventore itaque iure modi molestiae nesciunt officia, quae rerum soluta voluptatem! Et excepturi nostrum perspiciatis quas quo repellendus sequi! Autem dignissimos dolorem dolorum eligendi in iste modi perspiciatis quisquam rem saepe! Accusamus alias aperiam assumenda eaque enim ipsa, ipsam, iusto laborum magnam magni maiores minus molestias officiis, porro quasi ratione repudiandae sit vero. Commodi exercitationem perspiciatis saepe.
+        iframe(width="1980", height="500", src="https://www.youtube.com/embed/aJoo79OwZEI", title="YouTube video player", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen="")
+          
+        h2 Главая первая
+        h3 Параграф четвертый
+        h4 Подпараграф
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ex, incidunt magni molestias reiciendis repudiandae? Aperiam beatae dignissimos ipsum tenetur? Ex facere laborum modi nam necessitatibus obcaecati quod sapiente sequi.
+        
+        +code("js").
+          const test = (value) => {
+            let x = value;
+        
+            returt x++;
+          }

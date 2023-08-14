@@ -7,7 +7,7 @@ block variables
 doctype html
 html.no-js(lang="ru")
   head
-    include ../parts/head.pug
+    include ../parts/base/head.pug
 
   body
     if (env === "prod")
@@ -36,13 +36,13 @@ html.no-js(lang="ru")
 
     .layout
       block header
-        include ../parts/header.pug
+        include ../parts/header/header.pug
 
       main.layout__main
         block content
 
       block footer
-        include ../parts/footer.pug
+        include ../parts/base/footer.pug
 
     block modal
       +search-modal()

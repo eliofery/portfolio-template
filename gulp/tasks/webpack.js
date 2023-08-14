@@ -19,7 +19,7 @@ import webpackConfig from '../../webpack.config'
 
 // Сборка таска
 export const webpackBuild = () =>
-  src([`${config.src.js.root}/*.js`]) // входящие файлы
+  src([`${config.src.js.root}/*.js`, `!${config.src.js.root}/_*.js`]) // входящие файлы
     .pipe(
       // Отлавливаем и показываем ошибки в таске
       plumber({
@@ -37,5 +37,4 @@ export const webpackBuild = () =>
     .pipe(browserSync.stream()) // обновление страницы в браузере
 
 // Слежение за изменением файлов
-export const webpackWatch = () =>
-  watch(`${config.src.js.root}/**/*.js`, webpackBuild)
+export const webpackWatch = () => watch(`${config.src.js.root}/**/*.js`, webpackBuild)

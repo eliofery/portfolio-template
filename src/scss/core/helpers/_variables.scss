@@ -2,6 +2,7 @@
 $black: #222;
 $white: #fff;
 $accent: #ee1b24;
+$blue: #f2f9ff;
 
 :root {
   --color-text: #{hextorgb($black)};
@@ -11,6 +12,7 @@ $accent: #ee1b24;
   --color-submenu: #{hextorgb(darken($white, 5%))};
   --color-submenu-hover: #{hextorgb(#dcdcdc)};
   --color-overlay: #{hextorgb(#c7c7c7)};
+  --color-blue: #{hextorgb($blue)};
 
   // Swiper
   --swiper-theme-color: rgb(var(--color-accent)) !important;
@@ -24,6 +26,7 @@ $accent: #ee1b24;
   --color-submenu: #{hextorgb(darken($black, 3%))};
   --color-submenu-hover: #{hextorgb(#151515)};
   --color-overlay: #{hextorgb(#333)};
+  --color-blue: #{hextorgb(#252525)};
 }
 
 .dark-mode {

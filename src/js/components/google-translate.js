@@ -3,7 +3,7 @@
  */
 
 import Cookies from 'js-cookie'
-import { debounce } from '@/utils'
+import { debounce } from '@/_utils'
 
 const googleTranslateConfig = {
   // Оригинальный язык

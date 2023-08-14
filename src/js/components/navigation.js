@@ -1,7 +1,7 @@
 /**
  * Главная навигация
  */
-import { getElementsByData } from '@/utils'
+import { getElementsByData } from '@/_utils'
 
 const navigation = () => {
   const {

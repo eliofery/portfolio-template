@@ -49,10 +49,7 @@ const getData = () => {
 export const pugToHtml = () => {
   const jsonData = getData() // получаем данные
 
-  return src([
-    `${config.src.pug.pages}/**/*.pug`,
-    `!${config.src.pug.pages}/index-example.pug`,
-  ]) // входящие файлы
+  return src([`${config.src.pug.pages}/**/*.pug`, `!${config.src.pug.pages}/index-example.pug`]) // входящие файлы
     .pipe(
       // Отлавливаем и показываем ошибки в таске
       plumber({
@@ -66,7 +63,7 @@ export const pugToHtml = () => {
     .pipe(
       pug({
         doctype: 'html', // чтобы не было обратного слеша у одиночных тэгов
-        pretty: true, // сжатие html разметки
+        pretty: false, // сжатие html разметки
         plugins: [pugIncludeGlob()], // подключаем сторонние pug плагины
         locals: {
           // передаем jsonData в pug, далее используем его примерно так: #{jsonData.nav.home.link}
@@ -101,8 +98,7 @@ export const pugToHtml = () => {
           },
 
           // Пользовательский фильтр экранирования html тегов
-          'special-chars': text =>
-            text.replaceAll('<', '&lt;').replaceAll('>', '&gt;'),
+          'special-chars': text => text.replaceAll('<', '&lt;').replaceAll('>', '&gt;'),
         },
       }),
     )

@@ -5,7 +5,7 @@
 import { getElementsByData } from '@/_utils'
 
 const shape = () => {
-  const { shapeItem } = getElementsByData('el')
+  const { shape: shapeItem } = getElementsByData('el')
 
   window.addEventListener('scroll', () => {
     const baseOffsetTop = 80

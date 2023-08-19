@@ -1,6 +1,6 @@
 {
   "name": "portfolio-template",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Шаблон портфолио",
   "keywords": [
     "gulp",
@@ -70,6 +70,7 @@
     "gulp-svg-symbol-view": "^1.0.1",
     "gulp-svg2png": "^2.0.2",
     "gulp-to-ico": "^1.0.0",
+    "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "husky": "^8.0.3",
     "imagemin-pngquant": "^9.0.2",

@@ -19,7 +19,7 @@ import webpackConfig from '../../webpack.config'
 
 // Сборка таска
 export const webpackBuild = () =>
-  src([`${config.src.js.root}/*.js`, `!${config.src.js.root}/_*.js`]) // входящие файлы
+  src([`${config.src.js.root}/*.js`, `!${config.src.js.root}/_*.js`, `!${config.src.js.root}/Search.js`]) // входящие файлы
     .pipe(
       // Отлавливаем и показываем ошибки в таске
       plumber({

@@ -40,6 +40,10 @@
   margin: 0 0 30px;
 
   text-transform: uppercase;
+
+  &:first-letter {
+    color: rgb(var(--color-accent));
+  }
 }
 
 .main-about__list {

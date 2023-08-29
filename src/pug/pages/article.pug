@@ -39,14 +39,15 @@ block content
           .twitter(role="link", aria-label="Поделиться через Twitter")
           .facebook(role="link", aria-label="Поделиться через Facebook")
 
-    .main-article__content
-      .main-article__content-container.container
+    .container
+      .main-article__content
         h2 Введение
         h3 Параграф первый
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eveniet ex harum minima sequi tempora vel. Assumenda blanditiis ea eius incidunt iure minima nisi vero voluptatibus. Iste nisi praesentium quaerat?
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut beatae cumque, dicta dolore ducimus eligendi fuga ipsa laboriosam laborum maxime nam nemo nostrum quam quis, sint, unde veritatis! Et, porro?
-        picture
-          img(src="http://via.placeholder.com/1980x500", width="1980", height="500", alt="Картинка")
+        a(href="http://via.placeholder.com/2200x1100", data-fancybox)
+          picture
+            img(src="http://via.placeholder.com/1980x500", width="1980", height="500", alt="Картинка")
         
         h3 Параграф второй
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi distinctio dolorum eius expedita explicabo harum illum iusto nam necessitatibus nisi quam, qui repellendus reprehenderit sint totam voluptatum? Doloribus dolorum ea eum impedit molestiae nam quas quos ut vel veniam. Consequatur cumque dolores inventore itaque iure modi molestiae nesciunt officia, quae rerum soluta voluptatem! Et excepturi nostrum perspiciatis quas quo repellendus sequi! Autem dignissimos dolorem dolorum eligendi in iste modi perspiciatis quisquam rem saepe! Accusamus alias aperiam assumenda eaque enim ipsa, ipsam, iusto laborum magnam magni maiores minus molestias officiis, porro quasi ratione repudiandae sit vero. Commodi exercitationem perspiciatis saepe.
@@ -63,3 +64,11 @@ block content
         
             returt x++;
           }
+      
+      .main-article__pagination
+        a.main-article__pagination-prev(href="#")
+          span.main-article__pagination-label Предыдущая статья
+          span.main-article__pagination-title Как создать красивую анимацию через css стили и js
+        a.main-article__pagination-next(href="#")
+          span.main-article__pagination-label Следующая статья
+          span.main-article__pagination-title Как создать красивую анимацию через css стили и js часть вторая

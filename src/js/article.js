@@ -20,5 +20,5 @@ readProgress()
 backTop()
 
 Fancybox.bind('[data-fancybox]', {
-  // Your custom options
+  buttons: ['zoom', 'fullScreen', 'close'],
 })

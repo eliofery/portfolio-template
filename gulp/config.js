@@ -64,6 +64,8 @@ const config = {
     'scaffolds/components/_main-section.scss',
     'scaffolds/components/_card-article.scss',
     'scaffolds/components/_shape-decoration.scss',
+    'scaffolds/components/_read-progress.scss',
+    'scaffolds/components/_back-top.scss',
 
     'scaffolds/sections/_main-header.scss',
     'scaffolds/sections/_main-slider.scss',

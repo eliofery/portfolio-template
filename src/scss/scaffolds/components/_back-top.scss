@@ -1,0 +1,26 @@
+.back-top {
+  @include button-reset;
+
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: rgba(var(--color-accent));
+  border: 2px solid rgba(var(--color-text), 0.5);
+  box-shadow: 0 1px 10px rgba(var(--color-overlay));
+}
+
+.back-top svg {
+  fill: white;
+}
+
+@include from(sm) {
+  .back-top {
+    right: 40px;
+    bottom: 40px;
+  }
+}

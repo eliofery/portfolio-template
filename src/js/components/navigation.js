@@ -14,7 +14,7 @@ const navigation = () => {
     'nav-overlay': overlay,
   } = getElementsByData('el')
 
-  const navElements = nav.querySelectorAll('a[href^="#"]')
+  const navElements = document.querySelectorAll('a[href^="#"]')
 
   // Закрыть меню
   const onEscapeNav = evt => {
@@ -90,6 +90,9 @@ const navigation = () => {
     if (currentWidth > tabletWidth) {
       document.body.style.overflow = ''
       overlay.setAttribute('hidden', 'true')
+      navContent.querySelectorAll('.navigation__sub-list').forEach(item => {
+        item.style.height = ''
+      })
     } else if (nav.classList.contains('navigation__wrap--active')) {
       document.body.style.overflow = 'hidden'
       overlay.removeAttribute('hidden')
